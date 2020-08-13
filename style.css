@@ -1,1 +1,39 @@
+@font-face {
+  font-family: "Docktrin";
+  src: url("./assets/fontfaces/docktrin.ttf") format("truetype");
+}
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url("./assets/backgroundPattern.jpg");
+  font-family: Docktrin;
+}
 
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#menu-panel {
+  width: 35vw;
+  height: 80vh;
+}
+#card-panel {
+  display: grid;
+  width: 60vw;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.card-item {
+  width: 140px;
+  height: 200px;
+  margin-top: 20px;
+  background-size: cover;
+}

@@ -10,8 +10,11 @@
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
 body {
-  background: url("./assets/backgroundPattern.jpg");
+  background-image: url("./assets/images/backgroundPattern.jpg");
   font-family: Docktrin;
 }
 
@@ -19,6 +22,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  min-height: 100vh;
 }
 #menu-panel {
   width: 35vw;
@@ -32,8 +37,37 @@ body {
 }
 
 .card-item {
-  width: 140px;
-  height: 200px;
+  width: 19vh;
+  height: 27vh;
   margin-top: 20px;
+  border-radius: 10px;
+  background-image: url("./assets/images/cardCover.jpg");
   background-size: cover;
+}
+
+#start-screen {
+  background-image: url("./assets/images/background.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#start-button {
+  background-image: url("./assets/images/start.jpg");
+  background-size: contain;
+  width: 305px;
+  height: 90px;
+  border-radius: 20px;
+  color: white;
+  font-size: 76px;
+  text-align: center;
+  cursor: pointer;
+}
+#app-name {
+  font-size: 160px;
+  color: darkred;
+  text-align: center;
 }

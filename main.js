@@ -11,7 +11,8 @@ let cardValue = null,
   cardsValueArr = [...Array(18)],
   cardList = [...Array(18)],
   score = 0,
-  health = 50;
+  health = 50,
+  level = 1;
 
 /**
  * Panelin sıra değerlerini random alabilmek için
@@ -64,6 +65,15 @@ function updateHealthPanel() {
 }
 
 /**
+ * updateLevelPanel(), level değeri
+ * her değiştiğinde DOM'daki level
+ * elementinin değerini günceller.
+ */
+function updateLevelPanel() {
+  $("#level").text(level);
+}
+
+/**
  * createRandomList() cardList'in
  * değerlerinin random şekilde hazırlar.
  */
@@ -99,6 +109,7 @@ function addCardsToPanel() {
   createRandomList();
   updateHealthPanel();
   updateScorePanel();
+  updateLevelPanel();
 }
 // Paneli oluşturan fonksiyonun çağırılması
 addCardsToPanel();
@@ -183,6 +194,8 @@ function hideMatchedCards(selectedArr) {
   updateScorePanel();
   resetSelectedCardsData(selectedArr);
   if (score != 0 && score % 9 == 0) {
+    level += 1;
+    updateLevelPanel();
     orderNewLevelCards();
   }
 }

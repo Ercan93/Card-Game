@@ -60,7 +60,8 @@ body {
   padding: 10px;
 }
 #scorePanel,
-#healthPanel {
+#healthPanel,
+#levelPanel {
   background-size: cover;
   display: flex;
   align-items: center;
@@ -74,7 +75,8 @@ body {
 #scorePanel {
   background-image: url("./assets/images/score-bg.jpg");
 }
-#healthPanel {
+#healthPanel,
+#levelPanel {
   background-image: url("./assets/images/score-bg-2.jpg");
 }
 

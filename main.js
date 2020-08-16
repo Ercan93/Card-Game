@@ -96,6 +96,9 @@ function addCardsToPanel() {
   // Kart panelinin sütunlarını css'e atar.
   cardPanel.style.setProperty("--grid-cols", columns);
 
+  // Müziğin sesini ayarlar
+  $("#music").prop("volume", 0.4);
+
   createCardValueArr();
   //Kartları oluşturup cardPanel elementinin içine yazar.
   for (c = 0; c < rows * columns; c++) {

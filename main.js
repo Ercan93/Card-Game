@@ -100,6 +100,8 @@ function addCardsToPanel() {
   updateHealthPanel();
   updateScorePanel();
 }
+// Paneli oluşturan fonksiyonun çağırılması
+addCardsToPanel();
 
 /**
  *  Seçilen kartın değerlerini element'in referans olduğu objeye atar.
@@ -153,6 +155,19 @@ function coverUnmatchedCards(selectedArr) {
   updateHealthPanel();
   resetSelectedCardsData(selectedArr);
 }
+
+/**
+ * Kartların panele yeniden dizen fonksiyon
+ */
+function orderNewLevelCards() {
+  $(".card-item").css({
+    "background-image": "url('./assets/images/cardCover.jpg')",
+    visibility: "visible",
+  });
+  createCardValueArr();
+  createRandomList();
+}
+
 /**
  * Doğru eşleşen kartları panel üzerinde gizleme ve score değerini atırma.
  * @param {Array} selectedArr - Seçilmiş iki kartın objelerini ifade eder.
@@ -167,6 +182,9 @@ function hideMatchedCards(selectedArr) {
   });
   updateScorePanel();
   resetSelectedCardsData(selectedArr);
+  if (score != 0 && score % 9 == 0) {
+    orderNewLevelCards();
+  }
 }
 
 /**
@@ -205,5 +223,3 @@ $(".card-item").click(function () {
     }
   }
 });
-
-addCardsToPanel();

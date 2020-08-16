@@ -35,3 +35,21 @@ function assignCardValue(cardValue) {
   let index = cardsValueArr.indexOf(orderNum);
   cardsValueArr.splice(index, 1);
 }
+
+/**
+ * updateScorePanel(), score değeri
+ * her değiştiğinde DOM'daki score
+ * elementinin değerini günceller.
+ */
+function updateScorePanel() {
+  $("#score").text(score);
+}
+
+/**
+ * updateHealthPanel(), health değeri
+ * her değiştiğinde DOM'daki health
+ * elementinin değerini günceller.
+ */
+function updateHealthPanel() {
+  $("#health").text(health);
+}

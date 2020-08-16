@@ -105,11 +105,11 @@ addCardsToPanel();
  * @param {Object} element - Kart değerlerinin saklanacağı obje.
  * @param {String} element.className - Seçilen kartın class'ını saklar.
  * @param {String} element.value - Seçilen kartın posterIndex'ini saklar.
- * @param {String} className - Seçilen kartın tüm class'larını gösterir.
+ * @param {String} className - Seçilen kartın class'ını ifade eder.
  * @param {String} posterIndex - Seçilen kartın isim index'i.
  */
 function addSelectedCardData(element, className, posterIndex) {
-  element.className = "." + className.split(" ")[1];
+  element.className = className;
   element.value = posterIndex;
   // Seçilen kartın posterini div'in içinde gösterir.
   $(element.className).css(
@@ -165,7 +165,43 @@ function hideMatchedCards(selectedArr) {
   selectedArr.forEach((element) => {
     $(element.className).css("visibility", "hidden");
   });
-
   updateScorePanel();
   resetSelectedCardsData(selectedArr);
 }
+
+/**
+ * Paneldeki herhangi bir karta
+ * tıklandığında çalışan fonksiyon.
+ */
+$(".card-item").click(function () {
+  // Seçilen kartın özel class'ının alınması
+  let cardClass = "." + $(this).attr("class").split(" ")[1];
+
+  // Seçilen kartın data-index-number attribute'nın değerinin alınması
+  let selectedIndex = $(this).data("index-number");
+
+  // İlk kartın seçilmesi durumu
+  if (selectedCard.value == null) {
+    addSelectedCardData(selectedCard, cardClass, cardList[selectedIndex]);
+  } else {
+    // Aynı karta iki kere tıklandığında eşleşmeyi önleme
+    if (selectedCard.className != cardClass) {
+      addSelectedCardData(
+        selectedSecondCard,
+        cardClass,
+        cardList[selectedIndex]
+      );
+    }
+    //Seçilen iki kartın değerlerinin eşleşmesi
+    if (selectedCard.value == selectedSecondCard.value) {
+      setTimeout(() => {
+        hideMatchedCards([selectedCard, selectedSecondCard]);
+      }, 500);
+    } else {
+      //Seçilen iki kartın değerlerinin eşleşmemesi
+      setTimeout(() => {
+        coverUnmatchedCards([selectedCard, selectedSecondCard]);
+      }, 500);
+    }
+  }
+});

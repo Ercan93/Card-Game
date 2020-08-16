@@ -107,7 +107,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 #start-button {
@@ -123,8 +123,14 @@ body {
   cursor: pointer;
 }
 #app-name {
-  font-size: 160px;
-  color: rgb(206, 52, 13);
+  font-size: 100px;
+  width: 70vw;
+  height: 50vh;
+  background-image: url("./assets/images/start-bg.jpg");
+  background-size: cover;
+  padding: 30px 60px;
+  border-radius: 20px;
+  color: white;
   text-align: center;
 }
 #result-panel {
@@ -153,6 +159,37 @@ body {
   color: rgb(243, 149, 73);
 }
 @media (max-width: 1680px) {
+  #card-panel {
+    width: 90vw;
+    margin-left: 30px;
+  }
+  #game-name {
+    font-size: 35px;
+    width: 70%;
+    height: 13vh;
+  }
+  #score-panel,
+  #health-panel,
+  #level-panel {
+    width: 60%;
+    height: 10vh;
+    font-size: 40px;
+    margin: 0 10px;
+  }
+}
+@media (max-width: 1110px) {
+  .card-item {
+    width: 11vw;
+    height: 26vh;
+  }
+  #game-name {
+    font-size: 27px;
+  }
+}
+@media (max-width: 950px) {
+  .card-item {
+    width: 13vw;
+  }
   #container {
     flex-direction: column;
     height: 100vh;
@@ -160,36 +197,12 @@ body {
   #menu-panel {
     flex-direction: row;
     height: 100%;
-    width: 90vw;
-  }
-  #card-panel {
-    width: 90vw;
-  }
-  .card-item {
-    width: 16vh;
-    height: 22vh;
+    width: 95vw;
+    margin: 0;
   }
   #game-name {
-    font-size: 35px;
-    width: 50%;
-    height: 10vh;
-  }
-  #score-panel,
-  #health-panel,
-  #level-panel {
     width: 60%;
-    height: 10vh;
-    font-size: 50px;
-    margin: 0 10px;
-  }
-}
-@media (max-width: 1370px) {
-  #game-name {
-    font-size: 27px;
-  }
-}
-@media (max-width: 950px) {
-  #game-name {
+    height: 9vh;
     font-size: 21px;
   }
   #score-panel,
@@ -222,6 +235,9 @@ body {
   #game-name {
     font-size: 25px;
   }
+  #app-name {
+    font-size: 80px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -234,5 +250,8 @@ body {
   #level-panel {
     width: 40%;
     font-size: 30px;
+  }
+  #app-name {
+    font-size: 65px;
   }
 }

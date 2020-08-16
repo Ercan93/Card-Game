@@ -53,3 +53,38 @@ function updateScorePanel() {
 function updateHealthPanel() {
   $("#health").text(health);
 }
+
+/**
+ * createRandomList() cardList'in
+ * değerlerinin random şekilde hazırlar.
+ */
+function createRandomList() {
+  for (let i = 0; i < 18; i++) {
+    if (i % 2 == 0) cardValue = Math.floor(Math.random() * 10);
+    assignCardValue(cardValue);
+  }
+}
+/**
+ * addCardsToPanel() kartları panele
+ * grid düzenine göre dizer.
+ */
+function addCardsToPanel() {
+  let rows = 3,
+    columns = 6;
+  cardPanel.style.setProperty("--grid-rows", rows);
+  cardPanel.style.setProperty("--grid-cols", columns);
+
+  for (c = 0; c < rows * columns; c++) {
+    let card = document.createElement("div");
+    cardPanel.appendChild(card).className = `card-item card-${c}`;
+
+    //Kartların eşleşme durumunu kontrol etmek
+    //için data-index-number attribute'u oluşturduk
+    card.dataset.indexNumber = c;
+  }
+  createRandomList();
+  updateHealthPanel();
+  updateScorePanel();
+}
+
+addCardsToPanel();

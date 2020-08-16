@@ -47,6 +47,7 @@ body {
   border-radius: 10px;
   background-image: url("./assets/images/cardCover.jpg");
   background-size: cover;
+  box-shadow: 2px 2px 2px black;
 }
 #game-name {
   font-size: 60px;
@@ -58,7 +59,18 @@ body {
   border-radius: 20px;
   color: white;
   padding: 10px;
+  box-shadow: 2px 2px 10px black;
 }
+
+#health-panel {
+  text-shadow: 2px 2px #f0e8e8;
+}
+#level-panel,
+#score-panel,
+#game-name {
+  text-shadow: 2px 2px #111010;
+}
+
 #score-panel,
 #health-panel,
 #level-panel {
@@ -73,7 +85,9 @@ body {
   height: 150px;
   font-size: 60px;
   border-radius: 10px;
+  box-shadow: 2px 2px 10px black;
 }
+
 #score-panel {
   background-image: url("./assets/images/score-bg.jpg");
   color: white;
@@ -83,7 +97,7 @@ body {
 }
 #level-panel {
   background-image: url("./assets/images/level-bg.jpg");
-  color: darkred;
+  color: rgb(200, 14, 14);
 }
 
 #start-screen {
@@ -130,6 +144,7 @@ body {
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(114, 5, 5, 0.644);
   visibility: hidden;
+  text-shadow: 2px 2px black;
 }
 #new-game-btn {
   cursor: pointer;

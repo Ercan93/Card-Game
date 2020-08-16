@@ -80,7 +80,7 @@ function updateLevelPanel() {
 function createRandomList() {
   for (let i = 0; i < 18; i++) {
     // Her kartın bir eşi olduğundan dolayı kontrollü atama yapılır.
-    if (i % 2 == 0) cardValue = Math.floor(Math.random() * 10);
+    if (i % 2 == 0) cardValue = Math.floor(Math.random() * 14);
     assignCardValue(cardValue);
   }
 }

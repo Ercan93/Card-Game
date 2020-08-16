@@ -98,18 +98,19 @@ body {
 }
 #start-button {
   background-image: url("./assets/images/start.jpg");
-  background-size: contain;
-  width: 305px;
+  background-size: cover;
+  width: 405px;
   height: 90px;
   border-radius: 20px;
   color: white;
-  font-size: 76px;
+  font-size: 80px;
+  padding: 10px 0;
   text-align: center;
   cursor: pointer;
 }
 #app-name {
   font-size: 160px;
-  color: rgb(206, 68, 13);
+  color: rgb(206, 52, 13);
   text-align: center;
 }
 

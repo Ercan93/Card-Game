@@ -50,7 +50,7 @@ body {
 }
 #game-name {
   font-size: 60px;
-  background-image: url("./assets/images/score-bg.jpg");
+  background-image: url("./assets/images/name-bg.jpg");
   background-size: contain;
   text-align: center;
   width: 70%;
@@ -68,16 +68,19 @@ body {
   justify-content: space-evenly;
   width: 60%;
   height: 150px;
-  color: white;
-  font-size: 50px;
+  font-size: 60px;
   border-radius: 10px;
 }
 #scorePanel {
   background-image: url("./assets/images/score-bg.jpg");
+  color: white;
 }
-#healthPanel,
+#healthPanel {
+  background-image: url("./assets/images/health-bg.jpg");
+}
 #levelPanel {
-  background-image: url("./assets/images/score-bg-2.jpg");
+  background-image: url("./assets/images/level-bg.jpg");
+  color: darkred;
 }
 
 #start-screen {

@@ -117,3 +117,55 @@ function addSelectedCardData(element, className, posterIndex) {
     `url('./assets/images/poster-${posterIndex}.jpg')`
   );
 }
+
+/**
+ * Seçilen kartların değerlerini saklayan objeleri sıfırlar.
+ * @param {Array} selectedArr - Seçilmiş iki kartın objelerini ifade eder.
+ * @param {Ojbect} element - Seçilmiş kartın değerlerini saklayan objeyi referans eder.
+ * @param {String} element.className - Seçilmiş kartın class'nı ifade eder.
+ * @param {String} element.value - Seçilmiş kartın posterIndex'ini ifade eder.
+ */
+function resetSelectedCardsData(selectedArr) {
+  selectedArr.forEach((element) => {
+    element.className = null;
+    element.value = null;
+  });
+}
+
+/**
+ * Hatalı eşleşen kartları eski haline çevirme ve health değerini azaltma.
+ * @param {Array} selectedArr - Seçilmiş iki kartın objelerini ifade eder.
+ * @param {Ojbect} element - Seçilmiş kartın değerlerini saklayan objeyi referans eder.
+ * @param {String} element.className - Seçilmiş kartın class'nı ifade eder.
+ */
+function coverUnmatchedCards(selectedArr) {
+  // Hatalı eşleme olduğundan dolayı health değeri azaltma.
+  health -= 1;
+
+  selectedArr.forEach((element) => {
+    $(element.className).css(
+      "background-image",
+      "url('./assets/images/cardCover.jpg')"
+    );
+  });
+
+  updateHealthPanel();
+  resetSelectedCardsData(selectedArr);
+}
+/**
+ * Doğru eşleşen kartları panel üzerinde gizleme ve score değerini atırma.
+ * @param {Array} selectedArr - Seçilmiş iki kartın objelerini ifade eder.
+ * @param {Ojbect} element - Seçilmiş kartın değerlerini saklayan objeyi referans eder.
+ * @param {String} element.className - Seçilmiş kartın class'nı ifade eder.
+ */
+function hideMatchedCards(selectedArr) {
+  // Doğru eşleşme olduğundan dolayı score değerini artırma.
+  score += 1;
+
+  selectedArr.forEach((element) => {
+    $(element.className).css("visibility", "hidden");
+  });
+
+  updateScorePanel();
+  resetSelectedCardsData(selectedArr);
+}

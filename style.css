@@ -113,7 +113,30 @@ body {
   color: rgb(206, 52, 13);
   text-align: center;
 }
-
+#result-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 60vw;
+  height: 60vh;
+  left: 15%;
+  top: 15%;
+  background-image: url("./assets/images/result-bg.jpg");
+  background-size: cover;
+  color: white;
+  font-size: 60px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(114, 5, 5, 0.644);
+  visibility: hidden;
+}
+#new-game-btn {
+  cursor: pointer;
+  text-align: center;
+  padding-top: 10px;
+  color: rgb(243, 149, 73);
+}
 @media (max-width: 1680px) {
   #container {
     flex-direction: column;

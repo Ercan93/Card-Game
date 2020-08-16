@@ -165,7 +165,11 @@ function coverUnmatchedCards(selectedArr) {
       "url('./assets/images/cardCover.jpg')"
     );
   });
-
+  // health değeri 0 olduğunda sonuç ekranını gösterir.
+  if (health == 0) {
+    $("#result-panel").css("visibility", "visible");
+    $("#result").text(score);
+  }
   updateHealthPanel();
   resetSelectedCardsData(selectedArr);
 }
@@ -202,6 +206,21 @@ function hideMatchedCards(selectedArr) {
     orderNewLevelCards();
   }
 }
+
+/**
+ * Sonuç ekranında yeni oyun başlatma fonksiyonu
+ */
+$("#new-game-btn").click(function () {
+  score = 0;
+  level = 1;
+  health = 50;
+  updateHealthPanel();
+  updateScorePanel();
+  updateLevelPanel();
+
+  orderNewLevelCards();
+  $("#result-panel").css("visibility", "hidden");
+});
 
 /**
  * Paneldeki herhangi bir karta

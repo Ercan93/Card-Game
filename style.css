@@ -59,26 +59,29 @@ body {
   color: white;
   padding: 10px;
 }
-#scorePanel,
-#healthPanel,
-#levelPanel {
+#score-panel,
+#health-panel,
+#level-panel {
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin: 10px 0;
+  padding: 20px 0 0;
+  text-align: center;
   width: 60%;
   height: 150px;
   font-size: 60px;
   border-radius: 10px;
 }
-#scorePanel {
+#score-panel {
   background-image: url("./assets/images/score-bg.jpg");
   color: white;
 }
-#healthPanel {
+#health-panel {
   background-image: url("./assets/images/health-bg.jpg");
 }
-#levelPanel {
+#level-panel {
   background-image: url("./assets/images/level-bg.jpg");
   color: darkred;
 }
@@ -108,4 +111,89 @@ body {
   font-size: 160px;
   color: rgb(206, 68, 13);
   text-align: center;
+}
+
+@media (max-width: 1680px) {
+  #container {
+    flex-direction: column;
+    height: 100vh;
+  }
+  #menu-panel {
+    flex-direction: row;
+    height: 100%;
+    width: 90vw;
+  }
+  #card-panel {
+    width: 90vw;
+  }
+  .card-item {
+    width: 16vh;
+    height: 22vh;
+  }
+  #game-name {
+    font-size: 35px;
+    width: 50%;
+    height: 10vh;
+  }
+  #score-panel,
+  #health-panel,
+  #level-panel {
+    width: 60%;
+    height: 10vh;
+    font-size: 50px;
+    margin: 0 10px;
+  }
+}
+@media (max-width: 1370px) {
+  #game-name {
+    font-size: 27px;
+  }
+}
+@media (max-width: 950px) {
+  #game-name {
+    font-size: 21px;
+  }
+  #score-panel,
+  #health-panel,
+  #level-panel {
+    width: 60%;
+    height: 8vh;
+    font-size: 35px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 740px) {
+  .card-item {
+    width: 11vh;
+    height: 16vh;
+  }
+  #menu-panel {
+    flex-wrap: wrap;
+    height: 80%;
+  }
+  #score-panel,
+  #health-panel,
+  #level-panel {
+    width: 40%;
+    height: 6vh;
+    font-size: 35px;
+    margin: 0;
+  }
+  #game-name {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 500px) {
+  .card-item {
+    width: 9vh;
+    height: 14vh;
+  }
+  #score-panel,
+  #health-panel,
+  #level-panel {
+    width: 40%;
+    font-size: 30px;
+  }
 }

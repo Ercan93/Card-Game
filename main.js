@@ -18,8 +18,10 @@ let cardValue = null,
  * cardsValueArr dizisine panelin sıra değerlerini
  * atadık.
  */
-for (let a = 0; a < 18; a++) {
-  cardsValueArr[a] = a;
+function createCardValueArr() {
+  for (let a = 0; a < 18; a++) {
+    cardsValueArr[a] = a;
+  }
 }
 
 /**
@@ -84,6 +86,7 @@ function addCardsToPanel() {
   // Kart panelinin sütunlarını css'e atar.
   cardPanel.style.setProperty("--grid-cols", columns);
 
+  createCardValueArr();
   //Kartları oluşturup cardPanel elementinin içine yazar.
   for (c = 0; c < rows * columns; c++) {
     let card = document.createElement("div");
@@ -97,8 +100,6 @@ function addCardsToPanel() {
   updateHealthPanel();
   updateScorePanel();
 }
-
-addCardsToPanel();
 
 /**
  *  Seçilen kartın değerlerini element'in referans olduğu objeye atar.
@@ -161,7 +162,6 @@ function coverUnmatchedCards(selectedArr) {
 function hideMatchedCards(selectedArr) {
   // Doğru eşleşme olduğundan dolayı score değerini artırma.
   score += 1;
-
   selectedArr.forEach((element) => {
     $(element.className).css("visibility", "hidden");
   });
@@ -205,3 +205,5 @@ $(".card-item").click(function () {
     }
   }
 });
+
+addCardsToPanel();
